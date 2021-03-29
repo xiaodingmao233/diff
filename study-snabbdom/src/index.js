@@ -1,11 +1,13 @@
 import h from './mysnabbdom/h.js'
+import patch from './mysnabbdom/patch.js'
 
-var myVnode1 = h('ul', {}, [
-  h('li', {}, '哈哈'),
-  h('li', {}, [
-    h('li', {}, '哈哈'),
-    h('li', {}, '嘻嘻')
-  ]),
-  h('li', {}, h('span', {}, '文字'))
-])
-console.log(myVnode1)
+const myVnode1 = h('h1', {}, '你好')
+// const myVnode1 = h('ul', {}, [
+//   h('li', {}, 'A'),
+//   h('li', {}, 'B'),
+//   h('li', {}, 'C'),
+//   h('li', {}, 'D')
+// ])
+const container = document.getElementById('container')
+
+patch(container, myVnode1)
